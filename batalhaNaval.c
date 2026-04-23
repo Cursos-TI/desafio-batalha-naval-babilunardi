@@ -5,15 +5,11 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
-
-    
+       
     char letras[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
     int tabuleiro[10][10];
     int navio = 3;
+    
                 
      printf("***Bem vindo ao Tabuleiro de batalha naval da babi****\n");     
      printf("   "); 
@@ -35,10 +31,33 @@ int main() {
       printf("%c ", letras[i]);
         }
 
+        //diagonal 1
+
+
+        for (int i = 6; i < 10; i++)
+      {
+        for (int j = 7; j < 10; j++)
+        {
+            if (i == j) {tabuleiro[i][j] = 3;}
+
+        }
+    }
+        //diagonal 2
+
+        for (int i = 0; i < 10; i++)
+      {
+        for (int j = 7; j < 10; j++)
+        {
+            if (i + j == 9) {tabuleiro[i][j] = 3;}
+
+        }
+    }
+      
+
     //Navio 1
-        tabuleiro[2][5] = navio;
-        tabuleiro[2][6] = navio;
-        tabuleiro[2][7] = navio;
+        tabuleiro[4][5] = navio;
+        tabuleiro[4][6] = navio;
+        tabuleiro[4][7] = navio;
 
     //Navio 2
         tabuleiro[6][4] = navio;
@@ -47,6 +66,7 @@ int main() {
 
        printf("\n");
 
+     
 
     //Tabuleiro corpo
                                     
@@ -61,9 +81,13 @@ int main() {
         }
         printf("\n");
      }
+
+
+
+
+     return 0;
+
+    }
     
                
                 
-
-    return 0;
-}
